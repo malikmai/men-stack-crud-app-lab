@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= game.title %></title>
+</head>
+<body>
+    <h1><%= game.title %></h1>
+    <p><strong>Studio:</strong> <%= game.studio %></p>
+    <p><strong>Genre:</strong> <%= game.genre %></p>
+    <p><strong>Year:</strong> <%= game.year %></p>
+
+    <a href="/games">Back to Games List</a> | <a href="/games/<%= game._id %>/edit">Edit Game</a>
+    
+    <form action="/games/<%= game._id %>/delete" method="POST">
+        <button type="submit">Delete Game</button>
+    </form>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add New Game</title>
+</head>
+<body>
+    <h1>Add New Game</h1>
+    <form action="/games" method="POST">
+        <label for="studio">Game Studio:</label>
+        <input type="text" id="studio" name="studio" required><br><br></br>
+
+        <label for="title">Game Title:</label>
+        <input type="text" id="title" name="title" required><br><br></br>
+
+        <label for="genre">Genre:</label>
+        <input type="text" id="genre" name="genre"><br><br></br>
+
+        <label for="year">Year:</label>
+        <input type="number" id="year" name="year"><br><br></br>
+
+        <button type="submit">Add Game</button><br></br>
+    </form>
+    <a href="/games/new">Back to list</a>
+</body>
+</html>
