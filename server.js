@@ -26,6 +26,21 @@ app.get("/games/new", (req, res) => {
   res.render("./games/new.ejs");
 });
 
+app.get("/games/:gameId", async (req, res) => {
+  try {
+    const foundGame = await VideoGame.findById(req.params.gameId);
+    if (!foundGame) {
+      console.log("Game not found");
+      return res.status(404).send("Game not found");
+    }
+    console.log("Found game:", foundGame);
+    res.render("games/show.ejs", { game: foundGame });
+  } catch (error) {
+    console.error("Error fetching game:", error);
+    res.status(500).send("Error fetching game");
+  }
+});
+
 app.post("/games", async (req, res) => {
   const { studio, title, genre, year } = req.body;
   const newGame = new VideoGame({ studio, title, genre, year });
