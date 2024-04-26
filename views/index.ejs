@@ -7,20 +7,15 @@
 </head>
 <body>
     <h1>Video Game Database</h1>
-   <button><a href="/games/new">Add New Game</a></button>
-
     <ul>
         <% games.forEach(function(game) { %> 
             <li>
-                <%= game.title %> - <%= game.studio %> 
-                <a href="/games/<%= game._id %> ">View</a> 
-                <a href="/games/<%= game._id %>/edit ">Edit</a> 
-
-                <form action="/games/<%= game._id %>/delete" method="POST" style="display: inline;">
-                    <button type="submit">Delete</button>
-                </form>
+                <%= game.studio %> - <%= game.title %> 
             </li>
         <% }) %>
     </ul>
+    <button><a href="/games">Browse Games</a></button>
+    <button><a href="/games/new">Add Games</a></button>
+    <button><a href="/games/">Back to Index</a></button>
 </body>
 </html>
