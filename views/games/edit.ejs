@@ -3,26 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Edit Game</title>
+    <title>Edit <%= game.title %></title>
 </head>
 <body>
-    <h1>Edit Game</h1>
-    <form action="./games/<%= game._id %>" method="POST">
-        <input type="hidden" name="_method" value="PUT">
+    <h1>Edit <%= game.title %></h1>
+    <form action="/games/<%= game._id %>/edit" method="POST">
         <label for="studio">Game Studio:</label>
-        <input type="text" id="studio" name="studio" value="<%= game.studio %>" required><br><br></br>
+        <input type="text" id="studio" name="studio" value="<%= game.studio %>" required><br><br>
 
         <label for="title">Game Title:</label>
-        <input type="text" id="title" name="title" value="<%= game.title %>" required><br><br></br>
+        <input type="text" id="title" name="title" value="<%= game.title %>" required><br><br>
 
         <label for="genre">Genre:</label>
-        <input type="text" id="genre" name="genre" value="<%= game.genre %>"><br><br></br>
+        <input type="text" id="genre" name="genre" value="<%= game.genre %>"><br><br>
 
         <label for="year">Year:</label>
-        <input type="number" id="year" name="year" value="<%= game.year %>"><br><br></br>
+        <input type="number" id="year" name="year" value="<%= game.year %>"><br><br>
 
-        <button type="submit">Update Game</button><br></br>
+        <button type="submit">Update</button><br></br>
     </form>
-    <a href="/games">Back to list</a>
+    <button><a href="/games/<%= game._id %>">Cancel</a></button>
 </body>
 </html>

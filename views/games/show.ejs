@@ -12,7 +12,12 @@
         <p><strong>Genre:</strong> <%= game.genre %></p>
         <p><strong>Year:</strong> <%= game.year %></p>
 
-       <button><a href="/games/">Back to Games List</a></button><br></br><button><a href="/games/<%= game._id %>/edit">Edit Game</a></button>
+        <button><a href="/games/">Back to Index</a></button><br></br>
+        <button><a href="/games/<%= game._id %>/edit">Edit Game</a></button><br></br>
+
+        <form action="/games/<%= game._id %>/delete" method="POST" style="display: inline;">
+            <button type="submit">Delete</button>
+        </form>
         
     <% } else { %>
         <p>Game not found.</p>
